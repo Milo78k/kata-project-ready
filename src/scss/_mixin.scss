@@ -1,0 +1,5 @@
+@mixin mediaMinMD {
+  @media (min-width: 768px) {
+      background-color: red !important;
+  }
+}

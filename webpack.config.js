@@ -34,7 +34,7 @@ module.exports = {
 
       // Компилируем SCSS в CSS
       {
-        test: /\.scss$/,
+        test:/\.(s*)css$/,
         use: [
           MiniCssExtractPlugin.loader, // Extract css to separate file
           'css-loader', // translates CSS into CommonJS

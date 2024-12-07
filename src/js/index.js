@@ -1,3 +1,12 @@
+
+
+import '../scss/reset.css'
+import '../scss/normalize.css'
+
+
 import '../scss/style.scss'
 
-console.log('Works!')
+
+
+
+import './main.js'

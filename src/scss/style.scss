@@ -1,23 +1,4 @@
-@font-face {
-  font-family: "TT Lakes";
-  src: url("fonts/TTLakes-Regular.woff2") format ("woff2");
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "TT Lakes";
-  src: url("fonts/TTLakes-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "TT Lakes";
-  src: url("fonts/TTLakes-Bold.woff2") format ("woff2");
-  font-weight: 700;
-  font-style: normal;
-}
+@import 'index';
 
 html {
   box-sizing: border-box;
@@ -1695,3 +1676,6 @@ textarea {
     gap: 20px;
   }
 }
+
+@import "blocks/aside-page";
+@import "blocks/header";
