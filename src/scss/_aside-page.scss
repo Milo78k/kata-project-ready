@@ -1,0 +1,129 @@
+.aside-page {
+  display: none;
+  flex-direction: column;
+  width: 320px;
+  min-height: 100vh;
+  min-height: 100%;
+  font-family: inherit;
+  font-weight: 500;
+  box-shadow:
+    16px 0px 52px 0px rgba(14, 24, 80, 0.2),
+    -2px 0px 4px 0px rgba(69, 79, 126, 0.02);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3000;
+  visibility: hidden;
+  background-color: rgba(255, 255, 255);
+  transition: all 0.3s ease-in;
+  animation: asideOut 0.4s ease-in-out forwards;
+
+  &.aside-page--active {
+    display: flex;
+    visibility: visible;
+    height: 100%;
+    animation: asideIn 0.4s ease-in-out forwards;
+  }
+
+  @keyframes asideIn {
+    from {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  &.header-page {
+    max-width: 1140px;
+
+    &__list {
+      display: flex;
+      align-items: center;
+      margin: 0;
+      padding: 24px 24px 46px 24px;
+      justify-content: space-between;
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      justify-items: flex-start;
+      gap: 20px;
+
+      .header-page__link {
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  .main-aside {
+    .main-nav {
+      &__list {
+        display: flex;
+        flex-direction: column;
+
+        &__item {
+          margin-bottom: 10px;
+
+          .main-nav__link {
+            text-decoration: none;
+
+            &--is-active {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    .contact-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .contact-menu {
+        display: flex;
+
+        li {
+          margin-right: 10px;
+
+          .rounded-icon {
+            &--call,
+            &--chat,
+            &--profile {
+            }
+          }
+        }
+      }
+
+      .address {
+        &__mail-link,
+        &__tel-link {
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+    }
+
+    .lang {
+      display: flex;
+
+      &__item {
+        margin-right: 10px;
+
+        .lang__link {
+          &--active {
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+}
