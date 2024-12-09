@@ -1,0 +1,116 @@
+.header-page {
+  max-width: $desktop-big-desktop;
+
+  &__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 24px 24px 46px 24px;
+    justify-content: space-between;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-items: flex-start;
+    gap: 20px;
+  }
+}
+
+.header {
+  background-color: $white-color;
+  border-bottom: 1px solid $nav-list-active;
+  position: relative;
+  grid-area: header;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 18px 0;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    &--logo {
+      flex-grow: 2;
+      gap: 15px;
+
+      &::after {
+        content: '';
+        width: 2px;
+        height: 32px;
+        border-radius: 1px;
+        background-color: $border-color;
+      }
+
+      @media (min-width: $tablet-width) {
+        &::before {
+          content: '';
+          width: 2px;
+          height: 32px;
+          border-radius: 1px;
+          background-color: $border-color;
+        }
+
+        &::after {
+          display: none;
+        }
+      }
+    }
+
+    &--tablet,
+    &--mobile {
+      padding: 0;
+      margin: 0;
+    }
+
+    &--tablet {
+      display: none;
+
+      @media (min-width: $tablet-width) {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        transform: translateY(3px);
+
+        &::after {
+          content: '';
+          width: 2px;
+          height: 32px;
+          border-radius: 1px;
+          background-color: $border-color;
+        }
+      }
+
+      @media (min-width: $desktop-width) {
+        transform: translateY(5px);
+      }
+    }
+
+    &--mobile {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: block;
+
+    &__item--logo {
+      flex-grow: 2;
+    }
+  }
+
+  @media (min-width: $desktop-big-desktop) {
+    display: none;
+  }
+}

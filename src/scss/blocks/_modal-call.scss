@@ -1,0 +1,63 @@
+@keyframes modalIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes modalOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+input[type='tel'],
+input[type='email'],
+input[type='text'],
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.modal-call {
+  animation: modalOut 0.4s ease-in-out forwards;
+  z-index: 3200;
+  display: none;
+
+  &--active {
+    visibility: visible;
+    display: flex;
+    flex-direction: column;
+    animation: modalIn 0.4s ease-in-out forwards;
+    transform: translateX(0);
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 10;
+    align-self: flex-end !important;
+    bottom: -27px !important;
+    right: 20px;
+
+    @media (min-width: $tablet-width) {
+      align-self: flex-end;
+      bottom: 0 !important;
+    }
+  }
+
+  @media (min-width: $desktop-big-desktop) {
+    z-index: 3100;
+  }
+}

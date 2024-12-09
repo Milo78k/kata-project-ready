@@ -1,0 +1,34 @@
+.btn {
+  background: $white-color;
+  border: 1px solid $border-color;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__readmore {
+    background: $white-color;
+    border: 1px solid $border-color;
+    border: none;
+    background-color: inherit;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    transition: $transition-standard;
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &--brands {
+      display: none;
+
+      & {
+        @media (min-width: $tablet-width) {
+          & {
+            display: inline-flex;
+          }
+        }
+      }
+    }
+  }
+}

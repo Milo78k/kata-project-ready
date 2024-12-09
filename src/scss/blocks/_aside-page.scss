@@ -1,9 +1,8 @@
 .aside-page {
   display: none;
   flex-direction: column;
-  width: 320px;
+  width: $mobile-width;
   min-height: 100vh;
-  min-height: 100%;
   font-family: inherit;
   font-weight: 500;
   box-shadow:
@@ -14,8 +13,8 @@
   left: 0;
   z-index: 3000;
   visibility: hidden;
-  background-color: rgba(255, 255, 255);
-  transition: all 0.3s ease-in;
+  background-color: $white-color;
+  transition: $transition-standard;
   animation: asideOut 0.4s ease-in-out forwards;
 
   &.aside-page--active {
@@ -24,20 +23,54 @@
     height: 100%;
     animation: asideIn 0.4s ease-in-out forwards;
   }
+  & {
+    @media (min-width: $desktop-big-desktop) {
+      body {
+        min-width: $desktop-big-desktop;
+      }
+
+      & {
+        display: flex;
+        flex: 0 0 $mobile-width;
+        visibility: visible;
+        box-shadow: none;
+        flex-direction: column;
+        position: static;
+        transition: none;
+        min-height: 100% !important;
+        animation: asideIn 0.4s ease-in-out forwards;
+        grid-area: aside;
+        z-index: 2800;
+      }
+    }
+  }
 
   @keyframes asideIn {
     from {
       transform: translateX(-100%);
       opacity: 0;
     }
+
     to {
       transform: translateX(0);
       opacity: 1;
     }
   }
 
-  &.header-page {
-    max-width: 1140px;
+  @keyframes asideOut {
+    from {
+      transform: translateX(0);
+      opacity: 1;
+    }
+
+    to {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+
+  .header-page {
+    max-width: $desktop-big-desktop;
 
     &__list {
       display: flex;
@@ -86,20 +119,12 @@
     .contact-container {
       display: flex;
       justify-content: space-between;
-      align-items: center;
 
       .contact-menu {
         display: flex;
 
         li {
           margin-right: 10px;
-
-          .rounded-icon {
-            &--call,
-            &--chat,
-            &--profile {
-            }
-          }
         }
       }
 
@@ -114,11 +139,15 @@
 
     .lang {
       display: flex;
+      font-weight: 500;
+      text-transform: uppercase;
+      list-style: none;
+      padding: 0 0 32px 0;
 
       &__item {
         margin-right: 10px;
 
-        .lang__link {
+        &__link {
           &--active {
             font-weight: bold;
           }

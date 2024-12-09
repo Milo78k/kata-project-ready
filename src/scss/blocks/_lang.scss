@@ -1,0 +1,17 @@
+.lang {
+  display: flex;
+  font-weight: 500;
+  text-transform: uppercase;
+  list-style: none;
+  padding: 0 0 32px 0;
+
+  &__item {
+    margin-right: 8px;
+  }
+
+  &__link {
+    &--active {
+      color: $gray-text-color;
+    }
+  }
+}

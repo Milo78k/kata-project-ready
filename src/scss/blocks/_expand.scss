@@ -1,0 +1,19 @@
+.expand-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background-size: 30px;
+  background-image: url('./../img/expand.svg');
+  background-repeat: no-repeat;
+  background-position: left center;
+}
+
+.expand-btn {
+  &__text {
+    font-size: $font-size-standard;
+    font-weight: 500;
+    line-height: $line-height-standard;
+    letter-spacing: -0.2px;
+    text-align: left;
+  }
+}

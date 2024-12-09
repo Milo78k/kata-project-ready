@@ -1,0 +1,131 @@
+.brands-container {
+  min-width: $mobile-width;
+  max-width: 100%;
+  height: 100%;
+  overflow: visible;
+  background-color: $background-color;
+  margin-top: 50px;
+}
+
+.brands-wrapper {
+  overflow: visible;
+}
+
+.brands__title {
+  margin: 0;
+  padding: 16px 24px;
+  font-size: $font-size-standard;
+  line-height: $line-height-standard;
+  letter-spacing: -0.2px;
+  color: $gray-text-color;
+  background: linear-gradient(90deg, $background-color 0%, $white-color 100%);
+  border-top: 3px solid $border-color;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+.brand-list {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 20px;
+    height: 100%;
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+    transform: scale(-1, 1);
+    background: linear-gradient(
+      to left,
+      $background-color 16.84%,
+      rgba(255, 255, 255, 0) 100%
+    ) !important;
+    z-index: 10;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: scale(-1, 1);
+    background: linear-gradient(
+      to right,
+      $background-color 16.84%,
+      rgba(255, 255, 255, 0) 100%
+    );
+  }
+
+  &__btn {
+    width: 240px;
+    max-width: 240px;
+    height: 72px;
+    padding: 0 10px;
+    border-radius: 6px;
+    z-index: 10;
+    box-sizing: border-box;
+    position: relative;
+
+    @media (min-width: $tablet-width) {
+      & {
+        width: 100%;
+        min-width: 220px;
+        min-height: 72px;
+      }
+    }
+  }
+
+  &__items {
+    display: none;
+
+    & {
+      @media (min-width: $tablet-width) {
+        & {
+          display: grid;
+          margin-top: 15px;
+          padding: 16px;
+          gap: 10px;
+          grid-template-columns: repeat(3, 1fr);
+        }
+
+        &.visible {
+          & .brand-list__item:nth-child(n + 7) {
+            display: grid;
+          }
+        }
+      }
+      @media (min-width: $desktop-width) {
+        & {
+          grid-template-columns: repeat(4, 1fr);
+        }
+
+        &.visible {
+          & .brand-list__item:nth-child(n + 11) {
+            display: grid;
+          }
+        }
+      }
+    }
+  }
+
+  &__item {
+    @media (min-width: $tablet-width) {
+      & {
+        min-width: 240px;
+        min-height: 72px;
+      }
+      &:nth-child(n + 7) {
+        display: none;
+      }
+    }
+
+    &:nth-child(n + 11) {
+      @media (min-width: $desktop-width) {
+        display: grid;
+      }
+    }
+  }
+}
